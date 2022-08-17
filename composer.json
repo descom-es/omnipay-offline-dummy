@@ -1,0 +1,29 @@
+{
+    "name": "descom/omnipay-redirect-dummy",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\RedirectDummy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cesar",
+            "email": "cesargb@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.4",
+        "league/omnipay": "^3.2",
+        "omnipay/common": "^3.2"
+    },
+    "require-dev": {
+        "guzzlehttp/psr7": "^1",
+        "omnipay/tests": "^4.1",
+        "phpunit/phpunit": "^9.5"
+    }
+}
