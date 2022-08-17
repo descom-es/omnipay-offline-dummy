@@ -3,22 +3,13 @@
 namespace Omnipay\RedirectDummy\Message;
 
 use Omnipay\Common\Message\AbstractRequest;
+use Omnipay\RedirectDummy\App\App;
 
 /**
  * PayFast Purchase Request
  */
 class PurchaseRequest extends AbstractRequest
 {
-    public function getUrlGateway()
-    {
-        return $this->getParameter('url_gateway');
-    }
-
-    public function setUrlGateway($value)
-    {
-        return $this->setParameter('url_gateway', $value);
-    }
-
     public function getData()
     {
         $this->validate(
@@ -38,11 +29,11 @@ class PurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
-        return $this->response = new PurchaseResponse($this, $data, $this->getEndpoint().'/payment');
+        return $this->response = new PurchaseResponse($this, $data, $this->getEndpoint());
     }
 
     public function getEndpoint()
     {
-        return ''; //$this->getUrlGateway();
+        return App::url('/payment');
     }
 }

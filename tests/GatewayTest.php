@@ -2,13 +2,28 @@
 
 namespace Omnipay\RedirectDummy;
 
+use Omnipay\Common\Http\Client;
 use Omnipay\RedirectDummy\Gateway;
 use Omnipay\RedirectDummy\Message\PurchaseRequest;
 use Omnipay\RedirectDummy\Message\PurchaseResponse;
+use Omnipay\RedirectDummy\Tests\TestCase;
 use Omnipay\Tests\GatewayTestCase;
+use Symfony\Component\HttpFoundation\Request;
 
-class GatewayTest extends GatewayTestCase
+class GatewayTest extends TestCase
 {
+    private Gateway $gateway;
+
+    private function getHttpClient()
+    {
+        return new Client();
+    }
+
+    private function getHttpRequest()
+    {
+        return Request::createFromGlobals();
+    }
+
     public function setUp(): void
     {
         parent::setUp();
@@ -25,9 +40,8 @@ class GatewayTest extends GatewayTestCase
             'amount' => '12.00',
             'description' => 'Test purchase',
             'transactionId' => 1,
-            'notifyUrl' => 'http://localhost',
+            'notifyUrl' => 'http://localhost:8080/gateway/notify',
         ]);
-        //$response = $request->getResponse();
 
         $this->assertInstanceOf(PurchaseRequest::class, $request);
         $this->assertSame('12.00', $request->getAmount());
@@ -36,7 +50,7 @@ class GatewayTest extends GatewayTestCase
 
         $this->assertInstanceOf(PurchaseResponse::class, $response);
         $this->assertTrue($response->isRedirect());
-        $this->assertEquals('/payment', $response->getRedirectUrl());
-        var_dump($response->getData());
+        $this->assertEquals('http://localhost/payment', $response->getRedirectUrl());
+        $this->assertEquals('http://localhost:8080/gateway/notify', $response->getData()['notify_url']);
     }
 }

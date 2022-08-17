@@ -12,23 +12,6 @@ class Gateway extends AbstractGateway
         return 'RedirectDummy';
     }
 
-    public function getDefaultParameters()
-    {
-        return [
-            'url_gateway' => '',
-        ];
-    }
-
-    public function getUrlGateway()
-    {
-        return $this->getParameter('url_gateway');
-    }
-
-    public function setUrlGateway($value)
-    {
-        return $this->setParameter('url_gateway', $value);
-    }
-
     public function purchase(array $parameters = array())
     {
         return $this->createRequest(PurchaseRequest::class, $parameters);

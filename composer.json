@@ -7,6 +7,11 @@
             "Omnipay\\RedirectDummy\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Omnipay\\RedirectDummy\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Cesar",
@@ -19,11 +24,20 @@
         "php": "^8.0",
         "guzzlehttp/guzzle": "^7.4",
         "league/omnipay": "^3.2",
-        "omnipay/common": "^3.2"
+        "omnipay/common": "^3.2",
+        "illuminate/contracts": "^9.25"
     },
     "require-dev": {
         "guzzlehttp/psr7": "^1",
         "omnipay/tests": "^4.1",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^7.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Omnipay\\RedirectDummy\\App\\AppServiceProvider"
+            ]
+        }
     }
 }
