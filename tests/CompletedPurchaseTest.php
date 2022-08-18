@@ -31,7 +31,7 @@ class CompletedPurchaseTest extends TestCase
         $this->assertSame('12.00', $request->getAmount());
     }
 
-    public function testCompletedPurchaseResponseSuccess()
+    public function testCompletedPurchaseResponseGetReference()
     {
         $response = $this->gateway->completePurchase([
             'amount' => '12.00',
@@ -41,6 +41,18 @@ class CompletedPurchaseTest extends TestCase
         ])->send();
 
         $this->assertInstanceOf(CompletedPurchaseResponse::class, $response);
+        $this->assertNotEmpty($response->getTransactionReference());
+    }
+
+    public function testCompletedPurchaseResponseSuccess()
+    {
+        $response = $this->gateway->completePurchase([
+            'amount' => '12.00',
+            'description' => 'Test purchase',
+            'transactionId' => 1,
+            'status' => App::STATUS_SUCCESS,
+        ])->send();
+
         $this->assertTrue($response->isSuccessful());
     }
 
@@ -53,7 +65,6 @@ class CompletedPurchaseTest extends TestCase
             'status' => App::STATUS_DENIED,
         ])->send();
 
-        $this->assertInstanceOf(CompletedPurchaseResponse::class, $response);
         $this->assertFalse($response->isSuccessful());
     }
 }
