@@ -11,3 +11,8 @@ parameters:
     level: 5
 
     checkMissingIterableValueType: false
+
+    ignoreErrors:
+        - '#Call to an undefined method Omnipay\\Common\\GatewayInterface::getUrlNotify\(\).#'
+        - '#Call to an undefined method Omnipay\\Common\\GatewayInterface::getUrlReturn\(\).#'
+        - '#Property Omnipay\\OfflineDummy\\Tests.* \(Omnipay\\OfflineDummy\\Gateway\) does not accept Omnipay\\Common\\GatewayInterface.#'
