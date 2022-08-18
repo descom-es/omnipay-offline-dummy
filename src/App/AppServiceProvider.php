@@ -1,12 +1,12 @@
 <?php
 
-namespace Omnipay\RedirectDummy\App;
+namespace Omnipay\OfflineDummy\App;
 
 use Descom\Skeleton\Console\Install;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Omnipay\RedirectDummy\App\Http\Controllers\PaymentController;
-use Omnipay\RedirectDummy\App\Http\Controllers\PaymentProcessController;
+use Omnipay\OfflineDummy\App\Http\Controllers\PaymentController;
+use Omnipay\OfflineDummy\App\Http\Controllers\PaymentProcessController;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->registerRouters();
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'redirectdummy');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'omonipay-offline-dummy');
     }
 
     private function registerRouters(): void

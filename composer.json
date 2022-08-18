@@ -1,15 +1,16 @@
 {
-    "name": "descom/omnipay-redirect-dummy",
+    "name": "descom/omnipay-offline-dummy",
+    "description": "Omnipay Offline Dummy Gateway for testing",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Omnipay\\RedirectDummy\\": "src/"
+            "Omnipay\\OfflineDummy\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Omnipay\\RedirectDummy\\Tests\\": "tests/"
+            "Omnipay\\OfflineDummy\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -36,7 +37,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Omnipay\\RedirectDummy\\App\\AppServiceProvider"
+                "Omnipay\\OfflineDummy\\App\\AppServiceProvider"
             ]
         }
     }

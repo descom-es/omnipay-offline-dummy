@@ -1,36 +1,53 @@
 <?php
 
-namespace Omnipay\RedirectDummy;
+namespace Omnipay\OfflineDummy;
 
 use Omnipay\Common\AbstractGateway;
-use Omnipay\RedirectDummy\Message\PurchaseRequest;
+use Omnipay\OfflineDummy\Message\CompletedPurchaseRequest;
+use Omnipay\OfflineDummy\Message\PurchaseRequest;
 
 class Gateway extends AbstractGateway
 {
     public function getName()
     {
-        return 'RedirectDummy';
+        return 'OfflineDummy';
     }
 
     public function getDefaultParameters()
     {
         return [
-            'token' => '',
+            'url_notify' => 'http://localhost',
+            'url_return' => 'http://localhost',
         ];
     }
 
-    public function getToken()
+    public function getUrlNotify()
     {
-        return $this->getParameter('token');
+        return $this->getParameter('url_notify');
     }
 
-    public function setToken($value)
+    public function setUrlNotify($value)
     {
-        return $this->setParameter('token', $value);
+        return $this->setParameter('url_notify', $value);
+    }
+
+    public function getUrlReturn()
+    {
+        return $this->getParameter('url_return');
+    }
+
+    public function setUrlReturn($value)
+    {
+        return $this->setParameter('url_return', $value);
     }
 
     public function purchase(array $parameters = [])
     {
         return $this->createRequest(PurchaseRequest::class, $parameters);
+    }
+
+    public function completePurchase(array $parameters = array())
+    {
+        return $this->createRequest(CompletedPurchaseRequest::class, $parameters);
     }
 }

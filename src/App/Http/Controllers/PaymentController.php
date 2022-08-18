@@ -1,27 +1,28 @@
 <?php
 
-namespace Omnipay\RedirectDummy\App\Http\Controllers;
+namespace Omnipay\OfflineDummy\App\Http\Controllers;
 
 use GuzzleHttp\Client;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Omnipay\RedirectDummy\App\App;
+use Omnipay\OfflineDummy\App\App;
 
 class PaymentController extends Controller
 {
     public function __invoke(Request $request)
     {
         $request->validate([
-            'transactionId' => 'required',
+            'transaction_id' => 'required',
             'description' => 'required',
             'amount' => 'required|numeric',
-            'notifyUrl' => 'required|url',
+            'notify_url' => 'required|url',
         ]);
 
-        return view('redirectdummy::payment', [
-            'transactionId' => $request->input('transitionId'),
+        return view('omonipay-offline-dummy::payment', [
+            'transactionId' => $request->input('transaction_id'),
             'description' => $request->input('description'),
             'amount' => $request->input('amount'),
-            'notifyUrl' => $request->input('notifyUrl'),
+            'notifyUrl' => $request->input('notify_url'),
             'label_success' => App::STATUS_SUCCESS,
             'label_denied' => App::STATUS_DENIED,
         ]);

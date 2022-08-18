@@ -29,11 +29,11 @@
             <h2>Seleccione el resultado de la transacción:</h2>
 
             <div>
-                <form action="POST" action="/process">
-                    <input type="hidden" name="transitionId" value="{{ $transactionId }}" />
+                <form action="POST" action="/process/payment">
+                    <input type="hidden" name="transition_id" value="{{ $transactionId }}" />
                     <input type="hidden" name="amount" value="{{ $amount }}" />
-                    <input type="hidden" name="notifyUrl" value="{{ $notifyUrl }}" />
-                    <input type="submit" name="status" value="{{ $label_success }" />
+                    <input type="hidden" name="notify_url" value="{{ $notifyUrl }}" />
+                    <input type="submit" name="status" value="{{ $label_success }}" />
                     <input type="submit" name="status" value="{{ $label_denied }}" />
                 </form>
             </div>

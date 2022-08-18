@@ -1,15 +1,14 @@
 <?php
 
-namespace Omnipay\RedirectDummy\Tests;
+namespace Omnipay\OfflineDummy\Tests;
 
-use Omnipay\RedirectDummy\App\AppServiceProvider;
+use Omnipay\OfflineDummy\App\AppServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     public function setUp(): void
     {
         parent::setUp();
-        // additional setup
     }
 
     protected function getPackageProviders($app)

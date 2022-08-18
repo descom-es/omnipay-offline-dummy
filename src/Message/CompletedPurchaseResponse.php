@@ -1,16 +1,14 @@
 <?php
 
-namespace Omnipay\RedirectDummy\Message;
+namespace Omnipay\OfflineDummy\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
-use Omnipay\Common\Message\RedirectResponseInterface;
 
-class CompletedPurchaseResponse extends AbstractResponse implements RedirectResponseInterface
+class CompletedPurchaseResponse extends AbstractResponse
 {
     public function isSuccessful()
     {
-        return (bool)$this->getStatus();;
+        return (bool)$this->getData()['success'];
     }
-
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\RedirectDummy\Message;
+namespace Omnipay\OfflineDummy\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;

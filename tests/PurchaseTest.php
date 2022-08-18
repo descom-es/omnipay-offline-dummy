@@ -1,12 +1,12 @@
 <?php
 
-namespace Omnipay\RedirectDummy\Tests;
+namespace Omnipay\OfflineDummy\Tests;
 
 use Omnipay\Omnipay;
-use Omnipay\RedirectDummy\Gateway;
-use Omnipay\RedirectDummy\Message\PurchaseRequest;
-use Omnipay\RedirectDummy\Message\PurchaseResponse;
-use Omnipay\RedirectDummy\Tests\TestCase;
+use Omnipay\OfflineDummy\Gateway;
+use Omnipay\OfflineDummy\Message\PurchaseRequest;
+use Omnipay\OfflineDummy\Message\PurchaseResponse;
+use Omnipay\OfflineDummy\Tests\TestCase;
 use Omnipay\Tests\GatewayTestCase;
 
 class PurchaseTest extends TestCase
@@ -17,7 +17,7 @@ class PurchaseTest extends TestCase
     {
         parent::setUp();
 
-        $this->gateway = Omnipay::create('RedirectDummy');
+        $this->gateway = Omnipay::create('OfflineDummy');
     }
 
     public function testPurchaseRequest()
@@ -39,13 +39,11 @@ class PurchaseTest extends TestCase
             'amount' => '12.00',
             'description' => 'Test purchase',
             'transactionId' => 1,
-            'notifyUrl' => 'http://localhost:8080/gateway/notify',
         ])->send();
 
         $this->assertInstanceOf(PurchaseResponse::class, $response);
         $this->assertTrue($response->isRedirect());
         $this->assertEquals('http://localhost/payment', $response->getRedirectUrl());
-        $this->assertEquals('http://localhost:8080/gateway/notify', $response->getData()['notify_url']);
     }
 
     public function testPurchaseRedirect()
@@ -55,16 +53,10 @@ class PurchaseTest extends TestCase
                 'amount' => '12.00',
                 'description' => 'Test purchase',
                 'transactionId' => 1,
-                'notifyUrl' => 'http://localhost:8080/gateway/notify',
             ]
             )->send()
             ->getRedirectResponse()
             ->getContent();
-
-        $this->assertStringContainsString(
-            '<input type="hidden" name="notify_url" value="http://localhost:8080/gateway/notify" />',
-            $responseHtml
-        );
 
         $this->assertStringContainsString(
             '<input type="hidden" name="transaction_id" value="1" />',
