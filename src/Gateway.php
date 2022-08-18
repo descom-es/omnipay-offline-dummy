@@ -12,7 +12,24 @@ class Gateway extends AbstractGateway
         return 'RedirectDummy';
     }
 
-    public function purchase(array $parameters = array())
+    public function getDefaultParameters()
+    {
+        return [
+            'token' => '',
+        ];
+    }
+
+    public function getToken()
+    {
+        return $this->getParameter('token');
+    }
+
+    public function setToken($value)
+    {
+        return $this->setParameter('token', $value);
+    }
+
+    public function purchase(array $parameters = [])
     {
         return $this->createRequest(PurchaseRequest::class, $parameters);
     }
