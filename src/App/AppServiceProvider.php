@@ -2,7 +2,6 @@
 
 namespace Omnipay\OfflineDummy\App;
 
-use Descom\Skeleton\Console\Install;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Omnipay\OfflineDummy\App\Http\Controllers\PaymentController;

@@ -46,7 +46,7 @@ class Gateway extends AbstractGateway
         return $this->createRequest(PurchaseRequest::class, $parameters);
     }
 
-    public function completePurchase(array $parameters = array())
+    public function completePurchase(array $parameters = [])
     {
         return $this->createRequest(CompletedPurchaseRequest::class, $parameters);
     }

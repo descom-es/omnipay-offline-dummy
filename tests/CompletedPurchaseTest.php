@@ -2,15 +2,11 @@
 
 namespace Omnipay\OfflineDummy\Tests;
 
-use Omnipay\Omnipay;
 use Omnipay\OfflineDummy\App\App;
 use Omnipay\OfflineDummy\Gateway;
 use Omnipay\OfflineDummy\Message\CompletedPurchaseRequest;
 use Omnipay\OfflineDummy\Message\CompletedPurchaseResponse;
-use Omnipay\OfflineDummy\Message\PurchaseRequest;
-use Omnipay\OfflineDummy\Message\PurchaseResponse;
-use Omnipay\OfflineDummy\Tests\TestCase;
-use Omnipay\Tests\GatewayTestCase;
+use Omnipay\Omnipay;
 
 class CompletedPurchaseTest extends TestCase
 {

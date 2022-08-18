@@ -2,7 +2,6 @@
 
 namespace Omnipay\OfflineDummy\App\Http\Controllers;
 
-use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Omnipay\OfflineDummy\App\App;

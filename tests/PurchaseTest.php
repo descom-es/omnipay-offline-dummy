@@ -2,12 +2,10 @@
 
 namespace Omnipay\OfflineDummy\Tests;
 
-use Omnipay\Omnipay;
 use Omnipay\OfflineDummy\Gateway;
 use Omnipay\OfflineDummy\Message\PurchaseRequest;
 use Omnipay\OfflineDummy\Message\PurchaseResponse;
-use Omnipay\OfflineDummy\Tests\TestCase;
-use Omnipay\Tests\GatewayTestCase;
+use Omnipay\Omnipay;
 
 class PurchaseTest extends TestCase
 {
@@ -49,7 +47,8 @@ class PurchaseTest extends TestCase
     public function testPurchaseRedirect()
     {
         $responseHtml = $this->gateway
-            ->purchase([
+            ->purchase(
+                [
                 'amount' => '12.00',
                 'description' => 'Test purchase',
                 'transactionId' => 1,

@@ -3,13 +3,9 @@
 namespace Omnipay\OfflineDummy\Tests;
 
 use Illuminate\Support\Facades\Http;
-use Omnipay\Omnipay;
 use Omnipay\OfflineDummy\App\App;
 use Omnipay\OfflineDummy\Gateway;
-use Omnipay\OfflineDummy\Message\PurchaseRequest;
-use Omnipay\OfflineDummy\Message\PurchaseResponse;
-use Omnipay\OfflineDummy\Tests\TestCase;
-use Omnipay\Tests\GatewayTestCase;
+use Omnipay\Omnipay;
 
 class AppTest extends TestCase
 {
@@ -22,11 +18,11 @@ class AppTest extends TestCase
         $this->gateway = Omnipay::create('OfflineDummy');
     }
 
-
     public function testPurchase()
     {
         $response = $this->gateway
-            ->purchase([
+            ->purchase(
+                [
                 'amount' => '12.00',
                 'description' => 'Test purchase',
                 'transactionId' => 1,
