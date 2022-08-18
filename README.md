@@ -2,6 +2,10 @@
 
 Omnipay Offline Dummy Gateway for testing
 
+[![tests](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/tests.yml/badge.svg)](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/tests.yml)
+[![analyse](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/analyse.yml/badge.svg)](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/analyse.yml)
+[![style-fix](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/style-fix.yml/badge.svg)](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/style-fix.yml)
+
 ## Instalation
 
 ```sh
