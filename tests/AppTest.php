@@ -26,7 +26,6 @@ class AppTest extends TestCase
                 'amount' => '12.00',
                 'description' => 'Test purchase',
                 'transactionId' => 1,
-                'notifyUrl' => 'http://localhost:8080/gateway/notify',
             ]
             )->send();
 
@@ -34,7 +33,6 @@ class AppTest extends TestCase
             'transaction_id' => $response->getData()['transaction_id'],
             'amount' => $response->getData()['amount'],
             'description' => $response->getData()['description'],
-            'notify_url' => $response->getData()['notify_url'],
         ])->assertStatus(200)
         ->assertSee('<form action="POST" action="/process/payment">', false);
     }

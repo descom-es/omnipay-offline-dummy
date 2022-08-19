@@ -38,13 +38,11 @@ class PurchaseRequest extends AbstractRequest
             'transactionId'
         );
 
-        $data = [];
-        $data['notify_url'] = $this->getNotifyUrl();
-        $data['transaction_id'] = $this->getTransactionId();
-        $data['amount'] = $this->getAmount();
-        $data['description'] = $this->getDescription();
-
-        return $data;
+        return [
+            'transaction_id' => $this->getTransactionId(),
+            'amount' => $this->getAmount(),
+            'description' => $this->getDescription(),
+        ];
     }
 
     public function sendData($data)
