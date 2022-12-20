@@ -34,7 +34,7 @@ class AppTest extends TestCase
             'amount' => $response->getData()['amount'],
             'description' => $response->getData()['description'],
         ])->assertStatus(200)
-            ->assertSee('<form method="POST" action="/process/payment">', false);
+            ->assertSee('<form method="POST" action="/payment/process">', false);
     }
 
     public function testCompletePurchase()
