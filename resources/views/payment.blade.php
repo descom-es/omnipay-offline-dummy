@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descom Payment Demo</title>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -29,7 +31,7 @@
             <h2>Seleccione el resultado de la transacción:</h2>
 
             <div>
-                <form action="POST" action="/process/payment">
+                <form method="POST" action="/process/payment">
                     <input type="hidden" name="transition_id" value="{{ $transactionId }}" />
                     <input type="hidden" name="amount" value="{{ $amount }}" />
                     <input type="submit" name="status" value="{{ $label_success }}" />
@@ -39,4 +41,5 @@
         </div>
     </div>
 </body>
+
 </html>
