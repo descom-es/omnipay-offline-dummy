@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Omnipay\OfflineDummy\App\Http\Controllers\PaymentController;
 use Omnipay\OfflineDummy\App\Http\Controllers\PaymentProcessController;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,14 +19,15 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->registerRouters();
 
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'omonipay-offline-dummy');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'omnipay-offline-dummy');
     }
 
     private function registerRouters(): void
     {
-        Route::middleware('web')->group(function () {
-            Route::post('/payment', PaymentController::class);
-            Route::post('/payment/process', PaymentProcessController::class);
-        });
+        Route::middleware('web')
+            ->group(function () {
+                Route::post('/payment', PaymentController::class)->withoutMiddleware([VerifyCsrfToken::class]);
+                Route::post('/payment/process', PaymentProcessController::class)->withoutMiddleware([VerifyCsrfToken::class]);
+            });
     }
 }
