@@ -16,10 +16,10 @@ class PaymentProcessController extends Controller
         $response = $gateway->completePurchase($request->all())->send();
 
         Http::acceptJson()->post(
-            $gateway->getUrlNotify(),
+            $request->input('url_notify'),
             $response->getData()
         );
 
-        return response()->redirectTo($gateway->getUrlReturn());
+        return response()->redirectTo($request->input('url_return'));
     }
 }

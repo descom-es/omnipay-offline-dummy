@@ -21,15 +21,12 @@ use Omnipay\Omnipay;
 
 $gateway = Omnipay::create('OfflineDummy');
 
-$gateway->initialize([
-    'url_notify' => 'http://example.com/payment/notify',
-    'url_return' => 'http://example.com/payment/return',
-]);
-
 $request = $gateway->purchase([
                 'amount' => '12.00',
                 'description' => 'Test purchase',
                 'transactionId' => 1,
+                'url_notify' => 'http://example.com/payment/notify',
+                'url_return' => 'http://example.com/payment/return',
             ])->send();
 
 $response->redirect();

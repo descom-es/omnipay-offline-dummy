@@ -35,13 +35,17 @@ class PurchaseRequest extends AbstractRequest
         $this->validate(
             'amount',
             'description',
-            'transactionId'
+            'transactionId',
+            'url_notify',
+            'url_return',
         );
 
         return [
             'transaction_id' => $this->getTransactionId(),
             'amount' => $this->getAmount(),
             'description' => $this->getDescription(),
+            'url_notify' => $this->getUrlNotify(),
+            'url_return' => $this->getUrlReturn(),
         ];
     }
 
