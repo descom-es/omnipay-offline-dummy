@@ -31,7 +31,7 @@
             <h2>Seleccione el resultado de la transacción:</h2>
 
             <div>
-                <form method="POST" action="/process/payment">
+                <form method="POST" action="/payment/process">
                     <input type="hidden" name="transition_id" value="{{ $transactionId }}" />
                     <input type="hidden" name="amount" value="{{ $amount }}" />
                     <input type="submit" name="status" value="{{ $label_success }}" />
