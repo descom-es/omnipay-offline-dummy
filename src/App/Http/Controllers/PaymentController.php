@@ -16,7 +16,7 @@ class PaymentController extends Controller
             'amount' => 'required|numeric',
         ]);
 
-        return view('omonipay-offline-dummy::payment', [
+        return view('omnipay-offline-dummy::payment', [
             'transactionId' => $request->input('transaction_id'),
             'description' => $request->input('description'),
             'amount' => $request->input('amount'),
