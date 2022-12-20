@@ -23,10 +23,10 @@ class AppTest extends TestCase
         $response = $this->gateway
             ->purchase(
                 [
-                'amount' => '12.00',
-                'description' => 'Test purchase',
-                'transactionId' => 1,
-            ]
+                    'amount' => '12.00',
+                    'description' => 'Test purchase',
+                    'transactionId' => 1,
+                ]
             )->send();
 
         $responseHttp = $this->postJson($response->getRedirectUrl(), [
@@ -34,7 +34,7 @@ class AppTest extends TestCase
             'amount' => $response->getData()['amount'],
             'description' => $response->getData()['description'],
         ])->assertStatus(200)
-        ->assertSee('<form action="POST" action="/process/payment">', false);
+            ->assertSee('<form method="POST" action="/process/payment">', false);
     }
 
     public function testCompletePurchase()
@@ -48,7 +48,7 @@ class AppTest extends TestCase
             'notify_url' => 'http://localhost:8080/gateway/notify',
             'status' => App::STATUS_SUCCESS,
         ])->assertStatus(302)
-        ->assertRedirect($this->gateway->getUrlReturn());
+            ->assertRedirect($this->gateway->getUrlReturn());
 
         Http::assertSent(function ($request) {
             return $request->url() === $this->gateway->getUrlNotify();
