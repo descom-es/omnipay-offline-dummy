@@ -3,7 +3,6 @@
 namespace Omnipay\OfflineDummy\App;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Omnipay\OfflineDummy\App\Http\Controllers\PaymentController;
