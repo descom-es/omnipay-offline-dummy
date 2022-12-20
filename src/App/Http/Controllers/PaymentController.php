@@ -20,6 +20,8 @@ class PaymentController extends Controller
             'transactionId' => $request->input('transaction_id'),
             'description' => $request->input('description'),
             'amount' => $request->input('amount'),
+            'url_notify' => $request->input('url_notify'),
+            'url_return' => $request->input('url_return'),
             'label_success' => App::STATUS_SUCCESS,
             'label_denied' => App::STATUS_DENIED,
         ]);

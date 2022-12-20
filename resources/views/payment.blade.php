@@ -34,6 +34,8 @@
                 <form method="POST" action="/payment/process">
                     <input type="hidden" name="transition_id" value="{{ $transactionId }}" />
                     <input type="hidden" name="amount" value="{{ $amount }}" />
+                    <input type="hidden" name="url_notify" value="{{ $url_notify }}" />
+                    <input type="hidden" name="url_return" value="{{ $url_return }}" />
                     <input type="submit" name="status" value="{{ $label_success }}" />
                     <input type="submit" name="status" value="{{ $label_denied }}" />
                 </form>

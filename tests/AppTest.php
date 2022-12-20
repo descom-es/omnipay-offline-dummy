@@ -26,6 +26,8 @@ class AppTest extends TestCase
                     'amount' => '12.00',
                     'description' => 'Test purchase',
                     'transactionId' => 1,
+                    'notify_url' => 'http://localhost:8080/gateway/notify',
+                    'url_return' => 'http://localhost:8080/gateway/return',
                 ]
             )->send();
 
@@ -45,13 +47,14 @@ class AppTest extends TestCase
             'transaction_id' => 1,
             'amount' => 12.00,
             'description' => 'Test purchase',
-            'notify_url' => 'http://localhost:8080/gateway/notify',
+            'url_notify' => 'http://localhost:8080/gateway/notify',
+            'url_return' => 'http://localhost:8080/gateway/return',
             'status' => App::STATUS_SUCCESS,
         ])->assertStatus(302)
-            ->assertRedirect($this->gateway->getUrlReturn());
+            ->assertRedirect('http://localhost:8080/gateway/return');
 
         Http::assertSent(function ($request) {
-            return $request->url() === $this->gateway->getUrlNotify();
+            return $request->url() === 'http://localhost:8080/gateway/notify';
         });
     }
 }
