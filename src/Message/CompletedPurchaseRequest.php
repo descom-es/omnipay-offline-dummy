@@ -40,6 +40,16 @@ class CompletedPurchaseRequest extends AbstractRequest
         return $this->setParameter('status', $value);
     }
 
+    public function getTransactionId()
+    {
+        return $this->getParameter('transaction_id');
+    }
+
+    public function setTransactionId($value)
+    {
+        return $this->setParameter('transaction_id', $value);
+    }
+
     public function getData()
     {
         return [
