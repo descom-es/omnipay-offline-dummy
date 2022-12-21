@@ -32,7 +32,7 @@
 
             <div>
                 <form method="POST" action="/payment/process">
-                    <input type="hidden" name="transition_id" value="{{ $transactionId }}" />
+                    <input type="hidden" name="transaction_id" value="{{ $transactionId }}" />
                     <input type="hidden" name="amount" value="{{ $amount }}" />
                     <input type="hidden" name="url_notify" value="{{ $url_notify }}" />
                     <input type="hidden" name="url_return" value="{{ $url_return }}" />
