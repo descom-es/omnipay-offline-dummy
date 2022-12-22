@@ -55,6 +55,7 @@ class CompletedPurchaseRequest extends AbstractRequest
         return [
             'transaction_id' => $this->getTransactionId(),
             'amount' => $this->getAmount(),
+            'status' => $this->getStatus(),
             'success' => App::STATUS_SUCCESS === $this->getStatus(),
         ];
     }
