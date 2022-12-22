@@ -20,6 +20,6 @@ class PaymentProcessController extends Controller
             $response->getData()
         );
 
-        return response()->redirectTo($request->input('url_return'));
+        return response()->redirectTo($request->input('url_return') . '?status=' . $request->input('status'));
     }
 }

@@ -56,7 +56,6 @@ class CompletedPurchaseRequest extends AbstractRequest
             'transaction_id' => $this->getTransactionId(),
             'amount' => $this->getAmount(),
             'success' => App::STATUS_SUCCESS === $this->getStatus(),
-            'status' => $this->getStatus(),
         ];
     }
 
