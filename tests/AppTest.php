@@ -51,7 +51,7 @@ class AppTest extends TestCase
             'url_return' => 'http://localhost:8080/gateway/return',
             'status' => App::STATUS_SUCCESS,
         ])->assertStatus(302)
-            ->assertRedirect('http://localhost:8080/gateway/return');
+            ->assertRedirect('http://localhost:8080/gateway/return?status=ACEPTAR PAGO');
 
         Http::assertSent(function ($request) {
             return $request->url() === 'http://localhost:8080/gateway/notify';
