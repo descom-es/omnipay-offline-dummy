@@ -6,6 +6,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descom Payment Demo</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+
+            margin: 0;
+            padding: 1em;
+
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            box-sizing: border-box;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        .resume {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .resume h2 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .resume p {
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        .resume span {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .form {
+            text-align: center;
+        }
+
+        .form h2 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .form div {
+            margin: 20px 0;
+        }
+
+        .form input[type="submit"] {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .form input[type="submit"]:first-child {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .form input[type="submit"]:last-child {
+            background-color: #f44336;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
