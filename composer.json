@@ -1,16 +1,16 @@
 {
-    "name": "descom/omnipay-offline-dummy",
-    "description": "Omnipay Offline Dummy Gateway for testing",
+    "name": "descom/omnipay-bank-transfer",
+    "description": "Omnipay Bank Transfer Gateway",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Omnipay\\OfflineDummy\\": "src/"
+            "Omnipay\\BankTransfer\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Omnipay\\OfflineDummy\\Tests\\": "tests/"
+            "Omnipay\\BankTransfer\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -40,7 +40,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Omnipay\\OfflineDummy\\App\\AppServiceProvider"
+                "Omnipay\\BankTransfer\\App\\AppServiceProvider"
             ]
         }
     }

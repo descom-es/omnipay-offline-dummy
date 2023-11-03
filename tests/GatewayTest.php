@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\OfflineDummy\Tests;
+namespace Omnipay\BankTransfer\Tests;
 
-use Omnipay\OfflineDummy\Gateway;
+use Omnipay\BankTransfer\Gateway;
 use Omnipay\Tests\GatewayTestCase;
 
 class GatewayTest extends GatewayTestCase

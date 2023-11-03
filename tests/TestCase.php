@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\OfflineDummy\Tests;
+namespace Omnipay\BankTransfer\Tests;
 
-use Omnipay\OfflineDummy\App\AppServiceProvider;
+use Omnipay\BankTransfer\App\AppServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

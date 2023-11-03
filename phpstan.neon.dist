@@ -11,6 +11,3 @@ parameters:
     level: 5
 
     checkMissingIterableValueType: false
-
-    ignoreErrors:
-        - '#Property Omnipay\\OfflineDummy\\Tests.* \(Omnipay\\OfflineDummy\\Gateway\) does not accept Omnipay\\Common\\GatewayInterface.#'

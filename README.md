@@ -1,15 +1,12 @@
-# Omnipay:: Offline dummy
+# Omnipay:: Bank transfer
 
-Omnipay Offline Dummy Gateway for testing
+Omnipay bank Transfer Gateway
 
-[![tests](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/tests.yml/badge.svg)](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/tests.yml)
-[![analyse](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/analyse.yml/badge.svg)](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/analyse.yml)
-[![style-fix](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/style-fix.yml/badge.svg)](https://github.com/descom-es/omnipay-offline-dummy/actions/workflows/style-fix.yml)
 
 ## Instalation
 
 ```sh
-composer require descom/omnipay-offline-dummy
+composer require descom/omnipay-bank-transfer
 ```
 
 ## Basic Usage
@@ -19,7 +16,7 @@ composer require descom/omnipay-offline-dummy
 ```php
 use Omnipay\Omnipay;
 
-$gateway = Omnipay::create('OfflineDummy');
+$gateway = Omnipay::create('BankTransfer');
 
 $request = $gateway->purchase([
                 'amount' => '12.00',

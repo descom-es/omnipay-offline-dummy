@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\OfflineDummy\Message;
+namespace Omnipay\BankTransfer\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 

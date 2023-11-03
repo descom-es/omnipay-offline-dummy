@@ -1,12 +1,12 @@
 <?php
 
-namespace Omnipay\OfflineDummy\App;
+namespace Omnipay\BankTransfer\App;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Omnipay\OfflineDummy\App\Http\Controllers\PaymentController;
-use Omnipay\OfflineDummy\App\Http\Controllers\PaymentProcessController;
+use Omnipay\BankTransfer\App\Http\Controllers\PaymentController;
+use Omnipay\BankTransfer\App\Http\Controllers\PaymentProcessController;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->registerRouters();
 
-        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'omnipay-offline-dummy');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'omnipay-bank-transfer');
     }
 
     private function registerRouters(): void

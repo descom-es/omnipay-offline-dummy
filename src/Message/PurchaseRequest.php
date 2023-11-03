@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\OfflineDummy\Message;
+namespace Omnipay\BankTransfer\Message;
 
 use Omnipay\Common\Message\AbstractRequest;
-use Omnipay\OfflineDummy\App\App;
+use Omnipay\BankTransfer\App\App;
 
 /**
  * PayFast Purchase Request

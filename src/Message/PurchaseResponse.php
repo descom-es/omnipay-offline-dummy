@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\OfflineDummy\Message;
+namespace Omnipay\BankTransfer\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RedirectResponseInterface;
@@ -24,7 +24,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 
     public function isRedirect()
     {
-        return true;
+        return false;
     }
 
     public function getRedirectUrl()

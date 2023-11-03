@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\OfflineDummy\App;
+namespace Omnipay\BankTransfer\App;
 
 class App
 {

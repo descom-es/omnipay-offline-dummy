@@ -100,9 +100,10 @@
 <body>
     <div class="container">
         <header>
-            <h1>Método de pago de pruebas</h1>
+            <h1>Método de pago de transferencia bancaria</h1>
             <p>
-                Este método de pago ha sido desarrollado por Descom para testear los procesos de compra.
+                Este método de pago ha sido desarrollado por Descom para realizar procesos de compra por transferencia
+                bancaria.
             </p>
         </header>
 

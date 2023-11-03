@@ -1,10 +1,10 @@
 <?php
 
-namespace Omnipay\OfflineDummy\Tests;
+namespace Omnipay\BankTransfer\Tests;
 
-use Omnipay\OfflineDummy\Gateway;
-use Omnipay\OfflineDummy\Message\PurchaseRequest;
-use Omnipay\OfflineDummy\Message\PurchaseResponse;
+use Omnipay\BankTransfer\Gateway;
+use Omnipay\BankTransfer\Message\PurchaseRequest;
+use Omnipay\BankTransfer\Message\PurchaseResponse;
 use Omnipay\Omnipay;
 
 class PurchaseTest extends TestCase
@@ -15,7 +15,7 @@ class PurchaseTest extends TestCase
     {
         parent::setUp();
 
-        $this->gateway = Omnipay::create('OfflineDummy');
+        $this->gateway = Omnipay::create('BankTransfer');
     }
 
     public function testPurchaseRequest()
@@ -49,10 +49,10 @@ class PurchaseTest extends TestCase
         $responseHtml = $this->gateway
             ->purchase(
                 [
-                'amount' => '12.00',
-                'description' => 'Test purchase',
-                'transactionId' => 1,
-            ]
+                    'amount' => '12.00',
+                    'description' => 'Test purchase',
+                    'transactionId' => 1,
+                ]
             )->send()
             ->getRedirectResponse()
             ->getContent();

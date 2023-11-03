@@ -1,16 +1,16 @@
 <?php
 
-namespace Omnipay\OfflineDummy;
+namespace Omnipay\BankTransfer;
 
 use Omnipay\Common\AbstractGateway;
-use Omnipay\OfflineDummy\Message\CompletedPurchaseRequest;
-use Omnipay\OfflineDummy\Message\PurchaseRequest;
+use Omnipay\BankTransfer\Message\CompletedPurchaseRequest;
+use Omnipay\BankTransfer\Message\PurchaseRequest;
 
 class Gateway extends AbstractGateway
 {
     public function getName()
     {
-        return 'OfflineDummy';
+        return 'Bank Transfer';
     }
 
     public function getDefaultParameters()

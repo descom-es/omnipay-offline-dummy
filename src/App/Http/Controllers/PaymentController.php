@@ -1,10 +1,10 @@
 <?php
 
-namespace Omnipay\OfflineDummy\App\Http\Controllers;
+namespace Omnipay\BankTransfer\App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Omnipay\OfflineDummy\App\App;
+use Omnipay\BankTransfer\App\App;
 
 class PaymentController extends Controller
 {
@@ -16,7 +16,7 @@ class PaymentController extends Controller
             'amount' => 'required|numeric',
         ]);
 
-        return view('omnipay-offline-dummy::payment', [
+        return view('omnipay-bank-transfer::payment', [
             'transactionId' => $request->input('transaction_id'),
             'description' => $request->input('description'),
             'amount' => $request->input('amount'),

@@ -1,10 +1,10 @@
 <?php
 
-namespace Omnipay\OfflineDummy\Tests;
+namespace Omnipay\BankTransfer\Tests;
 
 use Illuminate\Support\Facades\Http;
-use Omnipay\OfflineDummy\App\App;
-use Omnipay\OfflineDummy\Gateway;
+use Omnipay\BankTransfer\App\App;
+use Omnipay\BankTransfer\Gateway;
 use Omnipay\Omnipay;
 
 class AppTest extends TestCase
@@ -15,7 +15,7 @@ class AppTest extends TestCase
     {
         parent::setUp();
 
-        $this->gateway = Omnipay::create('OfflineDummy');
+        $this->gateway = Omnipay::create('BankTransfer');
     }
 
     public function testPurchase()

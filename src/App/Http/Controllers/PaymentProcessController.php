@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\OfflineDummy\App\Http\Controllers;
+namespace Omnipay\BankTransfer\App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -11,7 +11,7 @@ class PaymentProcessController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $gateway = Omnipay::create('OfflineDummy');
+        $gateway = Omnipay::create('BankTransfer');
 
         $response = $gateway->completePurchase($request->all())->send();
 
