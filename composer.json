@@ -26,7 +26,7 @@
         "guzzlehttp/guzzle": "^7.4",
         "league/omnipay": "^3.2",
         "omnipay/common": "^3.2",
-        "illuminate/contracts": "^9.25|^10.0"
+        "illuminate/contracts": "^9.25|^10.0|^11.0"
     },
     "require-dev": {
         "guzzlehttp/psr7": "^1",
