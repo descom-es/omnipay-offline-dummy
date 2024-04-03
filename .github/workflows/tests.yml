@@ -1,4 +1,4 @@
-name: tests
+name: Tests
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   phpunit:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -24,6 +23,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, bcmath, intl, exif
+          coverage: none
 
       - name: Validate composer.json
         run: composer validate
