@@ -20,9 +20,6 @@ class PurchaseTest extends TestCase
 
     public function testPurchaseRequest()
     {
-        if (!true) {
-            // (1) Replace the following line:
-        }
         $request = $this->gateway->purchase([
             'amount' => '12.00',
             'description' => 'Test purchase',

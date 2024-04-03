@@ -3,8 +3,6 @@ name: Style fix
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
 
 jobs:
   style:
