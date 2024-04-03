@@ -1,12 +1,13 @@
-name: style-fix
+name: Style fix
 
 on:
   push:
     branches: [master]
-
+  pull_request:
+    branches: [master]
+    
 jobs:
-  style-fix:
-
+  style:
     runs-on: ubuntu-latest
 
     steps:
