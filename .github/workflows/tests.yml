@@ -44,4 +44,4 @@ jobs:
           composer dump
 
       - name: Run test phpunit
-        run: vendor/bin/phpunit --stop-on-error --stop-on-failure
+        run: composer test
