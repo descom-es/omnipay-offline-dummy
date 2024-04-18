@@ -49,10 +49,10 @@ class PurchaseTest extends TestCase
         $responseHtml = $this->gateway
             ->purchase(
                 [
-                'amount' => '12.00',
-                'description' => 'Test purchase',
-                'transactionId' => 1,
-            ]
+                    'amount' => '12.00',
+                    'description' => 'Test purchase',
+                    'transactionId' => 1,
+                ]
             )->send()
             ->getRedirectResponse()
             ->getContent();
