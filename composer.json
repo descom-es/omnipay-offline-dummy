@@ -35,7 +35,7 @@
         "orchestra/testbench": "^9.0|^10.0",
         "friendsofphp/php-cs-fixer": "^3.75",
         "phpstan/phpstan": "^2.1",
-        "larastan/larastan": "^3.0"
+        "nunomaduro/larastan": "^3.0"
     },
     "extra": {
         "laravel": {
