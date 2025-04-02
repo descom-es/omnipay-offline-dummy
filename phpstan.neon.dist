@@ -10,7 +10,5 @@ parameters:
     # The level 9 is the highest level
     level: 5
 
-    checkMissingIterableValueType: false
-
     ignoreErrors:
         - '#Property Omnipay\\OfflineDummy\\Tests.* \(Omnipay\\OfflineDummy\\Gateway\) does not accept Omnipay\\Common\\GatewayInterface.#'
