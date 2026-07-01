@@ -4,6 +4,7 @@ namespace Omnipay\OfflineDummy\App;
 
 use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Omnipay\OfflineDummy\App\Http\Controllers\PaymentController;
@@ -26,8 +27,9 @@ class AppServiceProvider extends ServiceProvider
     private function registerRouters(): void
     {
         $csrfMiddleware = [
-            PreventRequestForgery::class,
-            ValidateCsrfToken::class,
+            PreventRequestForgery::class, // Laravel 13
+            ValidateCsrfToken::class, // Laravel 12
+            VerifyCsrfToken::class, // Laravel 11
         ];
 
         Route::middleware('web')
